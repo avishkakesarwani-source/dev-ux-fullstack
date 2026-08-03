@@ -1,0 +1,22 @@
+<% layout("/layouts/boilerplate") -%>
+<body>
+    <!-- <form action="/listings">
+        <button>Home </button>
+    </form> -->
+    <h3>listing details of :<%=li.title%></h3>
+    <ul>
+        <li>DESCRIPTION:<%=li.description%></li>
+        <li><%=li.image%></li>
+        <li><%=li.url%></li>
+        <li>&#8377;<%=li.price.toLocaleString("en-IN")%></li> <!--num.toLocaleString("en-IN")=> function to display price with comma(indian formate) -->
+        <li> LOCATION:<%=li.location%></li>
+        <li> COUNTRY:<%=li.country%></li>
+    </ul>
+    <br>
+    <a href="/listings/<%=li._id%>/edit">Edit this listing</a>
+    <br><br>
+    <form action="/listings/<%=li._id%>?_method=delete" method="post">
+        <button>delete this listing</button>
+    </form>
+</body>
+</html>

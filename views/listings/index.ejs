@@ -1,0 +1,31 @@
+<% layout("/layouts/boilerplate") -%>
+<body>
+    <h1>All Listings</h1>
+    <!-- <form action="/listings/new" method="get">
+        <button>add new list</button>
+    </form> -->
+
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1 row-cols-xs-1">
+         <% for(let li of alllisting){%>
+            <a href="/Listings/<%=li.id%>" class="listing-link">
+            <div class="card col"> 
+                <img src="<%= li.image && li.image.url ? li.image.url : li.image %>" class="card-img-top" alt="listing-image" style="height: 20rem">
+                <div class=" card-img-overlay">abc</div>
+                <div class="card-body ">
+                    <h5 class="card-title"><b><%=li.title%></b></h5>
+                    <h6 class="card-price"> &#8377;<%=li.price.toLocaleString("en-IN")%>/Night</h5>
+                </div>
+            </div>
+            </a>
+        <%}%>
+    </div>
+       
+        <!-- <% for(let li of alllisting){%>
+            <ul>
+            <li><a href="/listings/<%=li._id%>"><%=li.title%></a></li>
+        </ul>
+    <%}%> -->
+   
+    
+    
+</body>

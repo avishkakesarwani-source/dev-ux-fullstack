@@ -2,21 +2,34 @@
 <body>
     <!-- <form action="/listings">
         <button>Home </button>
-    </form> -->
-    <h3>listing details of :<%=li.title%></h3>
-    <ul>
-        <li>DESCRIPTION:<%=li.description%></li>
-        <li><%=li.image%></li>
-        <li><%=li.url%></li>
-        <li>&#8377;<%=li.price.toLocaleString("en-IN")%></li> <!--num.toLocaleString("en-IN")=> function to display price with comma(indian formate) -->
-        <li> LOCATION:<%=li.location%></li>
-        <li> COUNTRY:<%=li.country%></li>
-    </ul>
+    </form> --> 
     <br>
-    <a href="/listings/<%=li._id%>/edit">Edit this listing</a>
-    <br><br>
-    <form action="/listings/<%=li._id%>?_method=delete" method="post">
-        <button>delete this listing</button>
-    </form>
+    <div class="row mt-3">
+        <div class="col-8 offset-3">
+            <h3>Listing details</h3>
+        </div>
+        
+        <div class="card col-6 offset-3 show-card">
+            <img src="<%= li.image && li.image.url ? li.image.url : li.image %>" class="card-img-top show-img" alt="listing.image">
+            <div class="card-body">
+                <p class="card-text">
+                    <b><%=li.title%></b> <br><br>
+                    <%=li.description%> <br>
+                    <i>&#8377;<%=li.price.toLocaleString("en-IN")%></i>  <br> <!--num.toLocaleString("en-IN")=> function to display price with comma(indian formate) -->
+                    <%=li.location%>,<%=li.country%> <br>
+                    </p>
+                </div>   
+            </div>
+        </div>
+    </div>
+  
+    <div class="btns">
+        <a class="btn btn-dark offset-3" href="/listings/<%=li._id%>/edit">Edit </a>
+        <form action="/listings/<%=li._id%>?_method=delete" method="post">
+        <button class="btn btn-dark offset-5">Delete </button>
+        </form>
+       
+    </div>
+    <br>
 </body>
 </html>

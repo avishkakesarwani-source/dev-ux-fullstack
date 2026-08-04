@@ -1,38 +1,43 @@
 <% layout("/layouts/boilerplate") %>
 <body>
+    <div class="row">
+        <div class="col-8 offset-2">
+            <br><br>
     <h3>Create a New Listing</h3>
     <form action="/listings" method="post">
-        <div>
+        <div class="mb-3">
             <label for="title" class="form-label">Title</label>
-            <input type="text" placeholder="enter title" name="li[title]"  class="form-control">
+            <input type="text" placeholder="Add a catchy title" name="li[title]"  class="form-control" required>
         </div>
-        <div>
+        <div  class="mb-3">
             <label for="description" class="form-label">Description</label>
             <textarea type="text" name="li[description]" class="form-control" required></textarea>
 
         </div>
-        <div>
+        <div class="mb-3">
             <label for="image" class="form-label">Image</label>
             <input type="text" placeholder="enter image url/link" name="li[image]"  class="form-control" required>
         </div>
-        <div>
-            <label for="price" class="form-label">Price</label>
-            <input type="number" placeholder="enter price" name="li[price]" class="form-control" required>
+        <div class="row">
+            <div class="mb-3 col-md-6">
+                <label for="price" class="form-label">Price</label>
+                <input type="number" placeholder="enter price" name="li[price]" class="form-control" required>
+            </div>
+            <div class="mb-3 col-md-6">
+                <label for="country" class="form-label">Country</label>
+                <input type="text" placeholder="enter country" name="li[country]" class="form-control" required>
+            </div>
         </div>
-        <div>
-            <label for="country" class="form-label">Country</label>
-            <input type="text" placeholder="enter country" name="li[country]" class="form-control" required>
+        <div class="mb-3 ">
+            <label for="location" class="form-label">Location</label>
+            <input type="text" placeholder="enter location" name="li[location]" class="form-control" required>
         </div>
-        <div>
-             <label for="location" class="form-label">Location</label>
-             <input type="text" placeholder="enter location" name="li[location]" class="form-control" required>
-        </div>
-        <div>
-             <label for="description" class="form-label">Description</label>
-        </div>
-        <button class="btn btn-dark">Add</button>
+        
+        <button class="btn btn-dark ">Add</button>
 
-
+       
     </form>
+    </div>
+    </div>
+     <br><br>
 </body>
-</html>
